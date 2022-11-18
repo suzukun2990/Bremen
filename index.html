@@ -16,6 +16,7 @@
 
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
+        var context = element.getContext( "2d" ) ;
         context.translate( device-width/2, device-height/2 ) ;	// 1: 水平位置、垂直位置をcanvasの半分だけずらして
         context.rotate( 50 * Math.PI / 180 ) ;	// 2: 回転を実行し、
         context.translate( -device-width/2, -device-height/2 ) ;
