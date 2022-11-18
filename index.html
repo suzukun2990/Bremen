@@ -9,13 +9,13 @@
     <canvas id="unity-canvas" width=320 height=180 style="width: 320px; height: 180px; background: #231F20"></canvas>
     <script src="Build/Bremen.loader.js"></script>
     <script>
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+     
         // Mobile device style: fill the whole browser client area with the game canvas:
         var meta = document.createElement('meta');
         meta.name = 'viewport';
         meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
         document.getElementsByTagName('head')[0].appendChild(meta);
-      }
+
 
       createUnityInstance(document.querySelector("#unity-canvas"), {
         dataUrl: "Build/Bremen.data",
