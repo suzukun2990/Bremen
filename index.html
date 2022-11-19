@@ -51,27 +51,6 @@
           }				
         });
       });
-
-      // フルスクリーン解除
-			document.getElementById('button2').addEventListener('click', function(){
-        
-        // Chrome & Firefox v64以降
-        if( document.exitFullscreen ) {
-          document.exitFullscreen();
-
-        // Firefox v63以前
-				} else if( document.mozCancelFullScreen ) {
-          document.mozCancelFullScreen();
-
-        // Safari & Edge & Chrome v44以前
-				} else if( document.webkitCancelFullScreen ) {
-          document.webkitCancelFullScreen();
-
-        // IE11
-				} else if( document.msExitFullscreen ) {
-					document.msExitFullscreen();
-				}
-			});
     </script>
     <button id="button1">フルスクリーン表示</button>
   </body>
