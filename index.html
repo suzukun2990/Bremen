@@ -6,7 +6,7 @@
     <title>Unity WebGL Player | Bremen</title>
   </head>
   <body style="text-align: center">
-    <canvas id="unity-canvas" width=1920 height=1080 style="width: 100%; height: 100%; background: #231F20"></canvas>
+    <canvas id="unity-canvas" width="1920" height="1080" style="width: 100%; height: 100%; background: #231F20"></canvas>
     <script src="Build/Bremen.loader.js"></script>
     <script>
       var meta = document.createElement('meta');
@@ -24,32 +24,6 @@
         productVersion: "1.0",
         // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-      });
-    </script>
-
-    <script>
-      window.addEventListener('load', function(){
-        
-        // フルスクリーン表示
-        document.getElementById('button1').addEventListener('click', function(){
-  
-          // Chrome & Firefox v64以降
-          if( document.body.requestFullscreen ) {
-            document.body.requestFullscreen();
-            
-          // Firefox v63以前
-          } else if( document.body.mozRequestFullScreen ) {
-            document.body.mozRequestFullScreen();
-  
-          // Safari & Edge & Chrome v68以前
-          } else if( document.body.webkitRequestFullscreen ) {
-            document.body.webkitRequestFullscreen();
-            
-          // IE11
-          } else if( document.body.msRequestFullscreen ) {
-            document.body.msRequestFullscreen();
-          }				
-        });
       });
     </script>
     <button id="button1">フルスクリーン表示</button>
