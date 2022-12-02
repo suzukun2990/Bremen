@@ -9,11 +9,3 @@ html *{
     height: auto;
     background: #231F20;
 }
-
-@media (max-width: 767px){
-    #unity-canvas{
-        height: 100%;
-        width: auto;
-        background: #231F20;
-    }    
-}
