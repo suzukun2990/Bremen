@@ -10,6 +10,8 @@
     <canvas id="unity-canvas"></canvas>
     <script src="Build/Bremen.loader.js"></script>
     <script>
+      event.preventDefault();
+
       if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)){
         var canvas = document.getElementById('unity-canvas');
         var c = canvas.getContext('2d');
