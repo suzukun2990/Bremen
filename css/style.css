@@ -12,8 +12,7 @@ html *{
 
 @media (max-width: 767px) {
     #unity-canvas{
-        width: auto;
         height: 100%;
+        width: auto;
     }
-    
 }
