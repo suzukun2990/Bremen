@@ -10,17 +10,39 @@
     <canvas id="unity-canvas"></canvas>
     <script src="Build/Bremen.loader.js"></script>
     <script>
-      createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/Bremen.data",
-        frameworkUrl: "Build/Bremen.framework.js",
-        codeUrl: "Build/Bremen.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "Bremen",
-        productVersion: "1.0",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-      });
+      if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)){
+        var canvas = document.createElement('canvas');
+        var unitycanvas= document.getElementById('unity-canvas');
+        canvas.width = unitycanvas.clientHeight;
+        canvas.height = unitycanvas.clientWidth;
+
+        var c = canvas.getContext('2d');
+        c.rotate(90 * Math.PI / 180);
+
+        createUnityInstance(c, {
+          dataUrl: "Build/Bremen.data",
+          frameworkUrl: "Build/Bremen.framework.js",
+          codeUrl: "Build/Bremen.wasm",
+          streamingAssetsUrl: "StreamingAssets",
+          companyName: "DefaultCompany",
+          productName: "Bremen",
+          productVersion: "1.0",
+          // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+          // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+        });
+      }else{
+        createUnityInstance(document.querySelector("#unity-canvas"), {
+          dataUrl: "Build/Bremen.data",
+          frameworkUrl: "Build/Bremen.framework.js",
+          codeUrl: "Build/Bremen.wasm",
+          streamingAssetsUrl: "StreamingAssets",
+          companyName: "DefaultCompany",
+          productName: "Bremen",
+          productVersion: "1.0",
+          // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+          // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+        });
+      }
     </script>
   </body>
 </html>
