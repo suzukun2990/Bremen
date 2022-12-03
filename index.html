@@ -24,7 +24,8 @@
 
       if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)){
         var canvas = document.getElementById('unity-canvas');
-        canvas.rotate(90 * Math.PI / 180);
+        var c = canvas.getContext('2d');
+        c.rotate(90 * Math.PI / 180);
       }
     </script>
   </body>
