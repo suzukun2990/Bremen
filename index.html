@@ -22,10 +22,9 @@
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });
 
-      if(navigator.userAgent.match(/iPhone|Android.+Mobile/)){
+      if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)){
         var canvas = document.getElementById('Unity-canvas');
         canvas.rotate(90 * Math.PI / 180);
-        console.log("A");
       }
     </script>
   </body>
