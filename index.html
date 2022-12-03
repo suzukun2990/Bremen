@@ -10,6 +10,12 @@
     <canvas id="unity-canvas"></canvas>
     <script src="Build/Bremen.loader.js"></script>
     <script>
+      if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)){
+        var canvas = document.getElementById('unity-canvas');
+        var c = canvas.getContext('2d');
+        c.rotate(90 * Math.PI / 180);
+      }
+
       createUnityInstance(document.querySelector("#unity-canvas"), {
         dataUrl: "Build/Bremen.data",
         frameworkUrl: "Build/Bremen.framework.js",
@@ -21,12 +27,6 @@
         // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });
-
-      if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)){
-        var canvas = document.getElementById('unity-canvas');
-        var c = canvas.getContext('2d');
-        c.rotate(90 * Math.PI / 180);
-      }
     </script>
   </body>
 </html>
