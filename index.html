@@ -7,16 +7,9 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body style="text-align: center">
-    <div class="wrapper">
-      <canvas id="unity-canvas"></canvas>
-    </div>
+    <canvas id="unity-canvas"></canvas>
     <script src="Build/Bremen.loader.js"></script>
     <script>
-      var w = $('.wrapper').width();
-      var h = $('.wrapper').height();
-      $('#unity-canvas').attr('width',w);
-      $('#unity-canvas').attr('height',h);
-
       createUnityInstance(document.querySelector("#unity-canvas"), {
         dataUrl: "Build/Bremen.data",
         frameworkUrl: "Build/Bremen.framework.js",
