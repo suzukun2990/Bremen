@@ -11,15 +11,7 @@
     <script src="Build/Bremen.loader.js"></script>
     <script>
       if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)){
-        var canvas = document.createElement('canvas');
-        var unitycanvas= document.getElementById('unity-canvas');
-        canvas.width = unitycanvas.clientHeight;
-        canvas.height = unitycanvas.clientWidth;
-
-        var c = canvas.getContext('2d');
-        c.rotate(90 * Math.PI / 180);
-
-        createUnityInstance(c, {
+        createUnityInstance(document.querySelector("#unity-canvas"), {
           dataUrl: "Build/Bremen.data",
           frameworkUrl: "Build/Bremen.framework.js",
           codeUrl: "Build/Bremen.wasm",
