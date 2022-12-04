@@ -9,3 +9,7 @@ html *{
     height: auto;
     background: #231F20;
 }
+
+.button{
+    text-align: center;
+}
