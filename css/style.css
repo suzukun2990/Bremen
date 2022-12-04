@@ -4,11 +4,8 @@ html *{
     box-sizing: border-box;
 }
 
-#canvas{
-    margin-bottom: 20%;
-}
-
 #unity-canvas{
+    margin-bottom: 20%;
     width: 100%;
     height: auto;
     background: #231F20;
