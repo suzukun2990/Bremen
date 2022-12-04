@@ -24,51 +24,6 @@
       // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
     });
   </script>
-  <script>
-    // フルスクリーン表示しているか確認
-    function checkFullScreen() {
-      var fullscreen_flag = false;
-      if (document.fullscreenElement || document.mozFullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
-        fullscreen_flag = true;
-      }
-      return fullscreen_flag;
-    }
-
-    window.addEventListener('load', function () {
-      // フルスクリーン表示
-      document.getElementById('switchfullscreen').addEventListener('click', function () {
-
-        if (checkFullScreen()) {
-
-          if (document.exitFullscreen) {
-            document.exitFullscreen();
-          } else if (document.mozCancelFullScreen) {
-            document.mozCancelFullScreen();
-          } else if (document.webkitCancelFullScreen) {
-            document.webkitCancelFullScreen();
-          } else if (document.msExitFullscreen) {
-            document.msExitFullscreen();
-          }
-
-          // 通常表示ならフルスクリーン表示位にする
-        } else {
-
-          if (document.body.requestFullscreen) {
-            document.body.requestFullscreen();
-          } else if (document.body.mozRequestFullScreen) {
-            document.body.mozRequestFullScreen();
-          } else if (document.body.webkitRequestFullscreen) {
-            document.body.webkitRequestFullscreen();
-          } else if (document.body.msRequestFullscreen) {
-            document.body.msRequestFullscreen();
-          }
-        }
-      });
-    });
-  </script>
-  <div class="button"> 
-    <button id="switchfullscreen">フルスクリーン表示</button>
-  </div>
 </body>
 
 </html>
