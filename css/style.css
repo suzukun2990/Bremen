@@ -4,6 +4,10 @@ html *{
     box-sizing: border-box;
 }
 
+#canvas{
+    padding-bottom: 20%;
+}
+
 #unity-canvas{
     width: 100%;
     height: auto;
