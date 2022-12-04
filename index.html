@@ -10,6 +10,11 @@
     <canvas id="unity-canvas"></canvas>
     <script src="Build/Bremen.loader.js"></script>
     <script>
+      if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+        var ctx = document.getElementById("cv1").getContext("2d");
+        ctx.rotate(Math.PI / 2);
+      }
+      
       createUnityInstance(document.querySelector("#unity-canvas"), {
         dataUrl: "Build/Bremen.data",
         frameworkUrl: "Build/Bremen.framework.js",
