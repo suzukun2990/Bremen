@@ -1,26 +1,73 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Bremen</title>
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body style="text-align: center">
-    <canvas id="unity-canvas"></canvas>
-    <script src="Build/Bremen.loader.js"></script>
-    <script>
-      createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/Bremen.data",
-        frameworkUrl: "Build/Bremen.framework.js",
-        codeUrl: "Build/Bremen.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "Bremen",
-        productVersion: "1.0",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Unity WebGL Player | Bremen</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="text-align: center">
+  <canvas id="unity-canvas"></canvas>
+  <script src="Build/Bremen.loader.js"></script>
+  <script>
+    createUnityInstance(document.querySelector("#unity-canvas"), {
+      dataUrl: "Build/Bremen.data",
+      frameworkUrl: "Build/Bremen.framework.js",
+      codeUrl: "Build/Bremen.wasm",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "DefaultCompany",
+      productName: "Bremen",
+      productVersion: "1.0",
+      // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+      // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+    });
+  </script>
+  <script>
+    // フルスクリーン表示しているか確認
+    function checkFullScreen() {
+      var fullscreen_flag = false;
+      if (document.fullscreenElement || document.mozFullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
+        fullscreen_flag = true;
+      }
+      return fullscreen_flag;
+    }
+
+    window.addEventListener('load', function () {
+
+      // フルスクリーン表示
+      document.getElementById('switchfullscreen').addEventListener('click', function () {
+
+        if (checkFullScreen()) {
+
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+          } else if (document.webkitCancelFullScreen) {
+            document.webkitCancelFullScreen();
+          } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+          }
+
+          // 通常表示ならフルスクリーン表示位にする
+        } else {
+
+          if (document.body.requestFullscreen) {
+            document.body.requestFullscreen();
+          } else if (document.body.mozRequestFullScreen) {
+            document.body.mozRequestFullScreen();
+          } else if (document.body.webkitRequestFullscreen) {
+            document.body.webkitRequestFullscreen();
+          } else if (document.body.msRequestFullscreen) {
+            document.body.msRequestFullscreen();
+          }
+        }
       });
-    </script>
-  </body>
+    });
+  </script>
+  <button id="switchfullscreen">フルスクリーン表示</button>
+</body>
+
 </html>
