@@ -5,7 +5,7 @@ html *{
 }
 
 #canvas{
-    padding-bottom: 20%;
+    margin-bottom: 20%;
 }
 
 #unity-canvas{
