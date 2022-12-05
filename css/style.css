@@ -4,6 +4,10 @@ html *{
     box-sizing: border-box;
 }
 
+body{
+    background-image: url(../images/background.jpg);
+}
+
 #unity-canvas{
     width: 80%;
     height: auto;
