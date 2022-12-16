@@ -1,15 +1,23 @@
 @charset "UTF-8";
 
-html *{
+html * {
     box-sizing: border-box;
 }
 
-body{
+body {
+    margin: 0;
+    padding: 0;
     text-align: center;
     background-image: url(../images/background.jpg);
 }
 
-#unity-canvas{
+#unity-canvas {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
     width: 100%;
     height: auto;
     background: #231F20;
